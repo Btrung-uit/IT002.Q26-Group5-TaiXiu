@@ -1,7 +1,8 @@
-#pragma once 
+#pragma once
 #include "ABettingStrategy.h"
+
 struct RoundRecord {
-    Bet bet;
+    Bet       bet;
     BetResult result;
-    double dCurrentbankroll; 
+    double    dCurrentBankroll;
 };

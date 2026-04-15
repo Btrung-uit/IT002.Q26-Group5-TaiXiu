@@ -17,7 +17,7 @@ void CSVExporter::exportToCSV(const vector<RoundRecord>& records) {
         file << (record.bet.type == BetType::Xiu ? "Xiu" : "Tai") << ","
              << record.bet.dAmount                                  << ","
              << (record.result == BetResult::Win ? "Win" : "Lose") << ","
-             << record.dCurrentbankroll                             << "\n";
+             << record.dCurrentBankroll                             << "\n";
     }
 
     file.close();
