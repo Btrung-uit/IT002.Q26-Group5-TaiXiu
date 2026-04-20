@@ -1,4 +1,5 @@
 #include "../include/Player.h"
+#include <cstdlib>
 
 /* *
  * @brief Khởi tạo đối tượng Player với số dư ban đầu.
@@ -19,6 +20,9 @@ Player::Player(double initial_balance) : current_bet(BetType::Xiu, 0.0)
 void Player::setStrategy(unique_ptr<ABettingStrategy> newStrategy)
 {
     strategy = std::move(newStrategy);
+    strategy->reset();
+    BetType side = (rand() % 2 == 0) ? BetType::Xiu : BetType::Tai;
+    current_bet = Bet(side, strategy->getBaseBet());
 }
 
 /* *
